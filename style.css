@@ -1,0 +1,783 @@
+:root {
+  --cor-principal: #003087;
+  --cor-secundaria: #4d0407;
+  --cor-texto: #333;
+  --cor-fundo: #9f9eac6e;;
+  --cor-footer: #222;
+  --cor-footer-texto: #fff;
+  --cor-footer-link: #ccc;
+  --cor-footer-hover: #ffd700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  overflow-x: hidden;
+  
+  z-index: 1;
+}
+
+body::before {
+  content: "";
+  position: fixed; /* ou absolute, dependendo do caso */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-image: url('/public/images/Botão\ Gracie\ \(3\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  background-blend-mode: overlay;
+  background-color: #9f9eac00!important;
+  backdrop-filter: blur(1px);
+ 
+  
+  opacity: 0.4 !important; /* controle da opacidade aqui */
+  z-index: -1; /* coloca atrás do conteúdo */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 0px;
+}
+
+/* Fog Overlays */
+#fog1, #fog2, #fog3 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+.logo-central {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: auto;
+  z-index: 10;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+  
+}
+
+.equipe-container h2{
+  padding-bottom: 2%;
+  
+}
+
+#fog1 { background: #ffffff; top: 0; left: 0; }
+#fog2 { background: #f0eff3c7; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+#fog3 { background: #a6a8ac; bottom: 0; right: 0; }
+
+/* Header */
+.topo {
+  position: relative;
+  width: 100%;
+  animation: fadeIn 6s ease-in forwards;
+}
+
+.img-topo {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+/* Navigation Menu */
+.menu-navegacao {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.menu-navegacao ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-navegacao ul li a {
+  color: var(--cor-footer-texto);
+  font-size: 1vw;
+  font-size: clamp(0.5rem, 1vw, 1.5rem);
+  font-weight: 400;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: rgba(8, 26, 194, 0.838);
+  border-radius: 40px;
+}
+
+.menu-navegacao ul li a:hover {
+  background-color: var(--cor-secundaria);
+  border-radius: 30px;
+}
+
+.logo-central:hover {
+  transform: translateX(-50%) scale(1.1);
+  opacity: 1;
+}
+
+/* Welcome Section */
+.boas-vindas {
+  text-align: center;
+  padding: 80px 20px;
+  z-index: 2;
+  animation: fadeIn 4s ease-in forwards;
+}
+
+.boas-vindas h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.seta-container {
+  margin-top: 5px;
+  padding-top: 0px;
+}
+
+.seta {
+  width: 30px;
+  margin: 0 auto;
+  animation: pulseDown 2s ease-in-out infinite;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  
+}
+
+.seta:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+  
+}
+
+/* Content Section */
+.content {
+  flex: 1;
+  z-index: 2;
+}
+
+.text-content {
+  text-align: center;
+  padding: 0px;
+  margin-top: 0px;
+  animation: fadeIn 1s ease-in forwards;
+
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-principal);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+
+}
+
+.text-content h2:hover {
+  transform: scale(1.05);
+}
+
+.text-content p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding-top: 0px;
+  color: var(--cor-texto);
+}
+
+#local {
+  margin-top: 15%;
+}
+
+/* Principles Section */
+.principios {
+  z-index: 2;
+  padding: 40px 20px;
+}
+
+.principios-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  
+}
+
+.principios-item {
+  text-align: center;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.text-principios h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cor-secundaria);
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.text-principios h2:hover {
+  transform: scale(1.05);
+}
+
+.image-jiu-jitsu {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+.formulario-container{
+  padding-bottom: 10rem;
+}
+
+.image-jiu-jitsu:hover {
+  transform: scale(1.05);
+}
+
+/* WhatsApp and Gracie Barra Buttons */
+.whatsapp, .graciebarrabotao {
+  position: fixed;
+  bottom: 20px;
+  z-index: 99;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp {
+  right: 20px;
+}
+
+.graciebarrabotao {
+  left: 20px;
+}
+
+.whatsapp img, .graciebarrabotao img {
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp img:hover, .graciebarrabotao img:hover {
+  transform: scale(1.2);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--cor-footer);
+  color: var(--cor-footer-texto);
+  padding: 20px 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  flex-direction: row;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 33%;
+  justify-content: center;
+}
+
+.footer-social-links span {
+  font-size: 1rem;
+  color: var(--cor-footer-texto);
+}
+
+.social-icon, .social-icondois {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover, .social-icondois:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+.social-icon-img, .social-icon-imgdois {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.social-icon-imgdois {
+  opacity: 0.7;
+}
+
+
+
+.footer-logo {
+  flex: 0 0 auto;
+}
+
+.logoextenso {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  justify-content: center;
+  display: flex;
+}
+
+.footer-dev {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.7;
+  ;
+}
+
+.footer-dev-social {
+  display: flex;
+  gap: 10px;
+}
+
+.video-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin-top: 15%;
+}
+.equipe-container {
+  display: flex;
+  text-align: center;
+  padding-top: 10rem;
+  justify-content: center;
+  padding-bottom: 20rem;
+}
+
+.equipe-container img {
+  max-height: 500px !important;
+  max-width: 500px !important;
+  height: 1000px!important;
+  width: 100%!important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.formulario-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+
+
+
+/* Removed body styling to avoid conflicts with existing styles */
+.formulario-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  /* Center the container using margin */
+  margin: 0 auto;
+  /* Optional: Add some top margin to ensure it’s not stuck to the top */
+  margin-top: 50px;
+}
+
+.formulario-container:hover {
+  transform: translateY(-5px);
+}
+
+.formulario-container h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.formulario-container label {
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.formulario-container input[type="text"],
+.formulario-container input[type="number"],
+.formulario-container input[type="tel"],
+.formulario-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.formulario-container input[type="text"]:focus,
+.formulario-container input[type="number"]:focus,
+.formulario-container input[type="tel"]:focus,
+.formulario-container textarea:focus {
+  border-color: #e63946;
+  outline: none;
+}
+
+.formulario-container textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.formulario-container input[type="submit"] {
+  background-color: #e63946;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-container input[type="submit"]:hover {
+  background-color: #d00000;
+}
+
+.formulario-container > div h2 {
+  color: #e63946;
+  font-size: 20px;
+  margin-top: 20px;
+}
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseDown {
+  0% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(10px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 0.6; }
+}
+
+.fade-in {
+  animation: fadeIn 4s ease-in forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) and (orientation: portrait) {
+  .img-topo {
+    height: 30vh;
+  }
+
+  .logo-central {
+    width: 120px;
+    bottom: -50px;
+  }
+
+  .boas-vindas {
+    padding: 60px 15px;
+  }
+
+  .boas-vindas h1 {
+    font-size: 2rem;
+  }
+
+  .text-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+  }
+
+  .principios-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+
+  .video-container video{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    ;
+  }
+
+  .image-jiu-jitsu {
+    max-width: 250px;
+    height: 250px;
+  }
+
+  .whatsapp img, .graciebarrabotao img {
+    width: 40px;
+  }
+
+  .footer-social-links{
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  menu-navegacao ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 0;
+  margin: 0;
+  background-color: #333;
+}
+
+.menu-navegacao ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 3vw;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.menu-navegacao ul li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+  .footerextenso {
+    width: 100%;
+    
+  }
+
+  .logoextenso {
+    width: 100%;
+    height: 50px;
+    font-size: 50vw;
+  }
+
+ /*  .logoextenso img {
+    font-size: clamp(1rem, 5vw, 10rem);
+  } */
+
+  .footer-logo {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 1rem;
+ 
+}
+
+.footer-dev span{
+  font-size: 0.5rem; ;
+}
+
+.social-icon-img, .social-icon-imgdois {
+    width: 15px;
+    height: 15px;
+}
+
+
+.content-container {
+  padding-bottom: 60vw;
+}
+
+.principios-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 0;
+}
+.principios {
+  z-index: 2;
+  padding: 0;
+}
+}
+
+@media (max-width: 480px) {
+  .boas-vindas h1 {
+    font-size: 1.5rem;
+  }
+
+  .equipe-container img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .equipe-container{
+    padding-top: 10%;
+    padding-bottom: 0;
+  }
+
+  .text-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-principios h2 {
+    font-size: 1.4rem;
+  }
+
+  .image-jiu-jitsu {
+    
+  max-width: 100%;
+  height: auto;
+  display: block;
+  }
+
+  .footer-content {
+    gap: 10px;
+  }
+
+  .footer-social-links span {
+    font-size: 0.9rem;
+  }
+
+  .social-icon-img, .social-icon-imgdois {
+    width: 20px;
+    height: 20px;
+  }
+
+  .logoextenso {
+    width: 100%;
+    height: 50px;
+  }
+
+  .video-container video{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    height: 350px;
+  }
+
+
+  #local{
+ padding-top: 25%;
+
+
+  }
+
+  .content-container {
+    padding-bottom: 5%;
+  }
+  
+  .principios-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding-top: 0;
+  }
+
+  .principios {
+    z-index: 2;
+    padding: 0;
+}
+}
+
+@media (max-height: 3000px) and (orientation: portrait) {
+  .footer-content{
+    display: flex;
+  }
+  
+}
+
+
+
+
+
+ #preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-logo {
+  width: 150px;
+  height: 150px;
+  animation: spin 5s linear infinite;
+}
+
+  
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 
+
+ 
+ 
