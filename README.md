@@ -1,7 +1,7 @@
 # AppGracieBarra-JS-HTML-CSS
-                            Projeto desenvolvido para Escola de Jiu-Jitsu Gracie Barra Vila Siam Londrina
+                       Projeto desenvolvido para Escola de Jiu-Jitsu Gracie Barra Vila Siam Londrina
 
-                                    Tecnologias utilizadas: JavaScript, HTML, CSS, Figma Canva.
+                              Tecnologias utilizadas: JavaScript, HTML, CSS, Figma Canva.
 
 
 ![Title Page](https://github.com/user-attachments/assets/ae4f8d60-a884-49bd-ad5f-addfb22c04f4)
