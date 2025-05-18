@@ -3,6 +3,7 @@
 
                               Tecnologias utilizadas: JavaScript, HTML, CSS, Figma Canva.
 
+![Termo de autorização](https://github.com/user-attachments/assets/4f9d9ca8-2b92-4d2c-9947-e77f7d59bb58)
 
 ![Title Page](https://github.com/user-attachments/assets/ae4f8d60-a884-49bd-ad5f-addfb22c04f4)
 ![Section Header Page 1](https://github.com/user-attachments/assets/abb8a268-08c5-48a8-a926-68a524c9d54a)
